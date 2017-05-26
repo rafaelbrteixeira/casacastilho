@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+    <h:head>
+        <meta charset="UTF-8"/>
+       
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        
+       
+        <h:outputStylesheet name="css/default.css" />               
+        <h:outputStylesheet name="css/bootstrap.min.css"/>
+        
+        <title>Projeto Casa Castilho</title>
+ 
+        <ui:insert name="head">          
+        </ui:insert>
+    </h:head>
+
+    <h:body>           
+        <main>       
+            <div class="container">
+                <ui:insert name="top">
+                  <!-- <ui:include src="/top.xhtml" />  -->
+                </ui:insert>   
+
+                <ui:insert name="middle">
+                   <!-- <ui:include src="/menus/middle.xhtml" /> -->
+                </ui:insert>  
+                
+                <div class="row content">  
+                    <section>
+                        <div class="col-md-12">                                
+                            <div class="content"> 
+                                <ui:insert name="content"/>
+                            </div> 
+                        </div>
+                    </section>    
+                </div>    
+            </div>                          
+        </main>
+        
+        <footer>
+            <div>
+                <div class="d-footer">
+                   <!-- <ui:include src="/rodape.xhtml" />-->
+                </div> 
+            </div> 
+        </footer>    
+                
+        <script src="#{facesContext.externalContext.requestContextPath}/js/bootstrap.min.js"></script> 
+    </h:body>
+</html>

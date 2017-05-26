@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    
+    <ui:composition template="/templates/principal.xhtml">
+        <ui:define name="head">
+            <style>
+            .contentLogin{
+                max-width:250px;
+            }
+            </style>
+        </ui:define>  
+        <ui:define name="content">           
+            <div class="imageCenter"> 
+                <p:panel>
+                    <form action="j_spring_security_check" method="post" id="aFormLogin">   
+                        <div class="row">
+                            <div class="col-md-4 hidden-xs">
+
+                            </div>
+                            <div class="col-md-8"> 
+                                <div class="contentLogin">                       
+                                    <h:outputLabel for="j_username" value="Email: " />  
+                                    <p:inputText value="#{loginBean.username}"   
+                                                 id="j_username" required="true" label="username" 
+                                                 styleClass="form-control" placeholder="Usuário"/> 
+
+
+                                    <h:outputLabel for="j_password" value="Senha: " />  
+                                    <h:inputSecret value="#{loginBean.password}"   
+                                                   id="j_password" required="true" label="password" 
+                                                   styleClass="form-control"/>  
+
+
+                                    <p:focus for="j_username"/>
+
+                                    <p/>
+
+                                    <div class="row">  
+                                        <div class="col-md-6"> 
+                                            <h:commandButton value="Login" type="submit"  styleClass="btn btn-success form-control"/> 
+                                        </div> 
+                                        <div class="col-md-6"> 
+                                            <h:commandButton value="Cancelar" type="button" action="index" 
+                                                             id="jCancel" styleClass="btn btn-primary form-control"/> 
+                                        </div>
+                                    </div>  
+
+                                    <p />
+
+                                    <h:outputLabel value="Usuário inválido!" style="color:firebrick;font-weight:bold;" rendered="#{param.erro}" />                 
+                                    <h:outputLabel value="Acesso negado!" style="color:firebrick;font-weight:bold;" rendered="#{param.acesso}" />                                                                        
+                                </div>
+                            </div>
+                        </div> 
+                    </form>   
+                    
+                    <h:form id="aForm"> 
+                        <h:commandLink action="recuperacaosenha" value="#{msgs.esqueceu_senha}" style="margin-left:40px;"/>
+                        <p:commandLink value="#{msgs.retornar}" style="float:right" onclick="javascript:history.back();" type="button"/> 
+                    </h:form>
+                </p:panel>  
+            </div>    
+        </ui:define>
+    </ui:composition>      
+</html>
