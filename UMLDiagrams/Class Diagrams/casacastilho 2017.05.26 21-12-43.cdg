@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="casacastilho">
+  <ClassDiagramComponents>
+    <Class name="expressionBean" package="br.com.beans" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="nameParam" type="String" visibility="private"/>
+        <Field name="object" type="Object" visibility="private"/>
+        <Field name="alias" type="String" visibility="private"/>
+        <Field name="nameClass" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="pNameParam"/>
+          <Argument type="Object" name="pObject"/>
+          <Argument type="String" name="pnameClass"/>
+          <Argument type="String" name="pAlias"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNameParam" returnType="String" visibility="public"/>
+        <Method name="setNameParam" returnType="void" visibility="public">
+          <Argument type="String" name="nameParam"/>
+        </Method>
+        <Method name="getObject" returnType="Object" visibility="public"/>
+        <Method name="setObject" returnType="void" visibility="public">
+          <Argument type="Object" name="object"/>
+        </Method>
+        <Method name="getAlias" returnType="String" visibility="public"/>
+        <Method name="setAlias" returnType="void" visibility="public">
+          <Argument type="String" name="alias"/>
+        </Method>
+        <Method name="getNameClass" returnType="String" visibility="public"/>
+        <Method name="setNameClass" returnType="void" visibility="public">
+          <Argument type="String" name="nameClass"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="HibernateUtil" package="util" visibility="public" xPosition="514.0" yPosition="94.0">
+      <Fields>
+        <Field name="session" type="SessionFactory" visibility="public" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="buildSession" returnType="SessionFactory" visibility="private" isStatic="true"/>
+        <Method name="getSessionFactory" returnType="SessionFactory" visibility="public" isStatic="true"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>

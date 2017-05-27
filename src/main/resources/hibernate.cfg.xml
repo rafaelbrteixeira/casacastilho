@@ -1,11 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
-  <session-factory>
-    <property name="hibernate.dialect">org.hibernate.dialect.DerbyDialect</property>
-    <property name="hibernate.connection.driver_class">org.apache.derby.jdbc.ClientDriver</property>
-    <property name="hibernate.connection.url">jdbc:derby://localhost:1527/sample</property>
-    <property name="hibernate.connection.username">app</property>
-    <property name="hibernate.connection.password">app</property>
-  </session-factory>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.DerbyDialect</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/casacastilho</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">root</property>
+    
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.show_sql">true</property>  
+        <property name="hibernate.format_sql">false</property> 
+        <!-- <property name="hibernate.jdbc.batch_size">30</property>  
+        <property name="hibernate.max_fetch_depth">5</property>  -->
+        <!-- <property name="hibernate.current_session_context_class">thread</property>-->
+                    
+        <property name="connection.pool_size">10</property>  
+        <property name="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>   
+        <property name="hibernate.c3p0.min_size">1</property>   
+        <property name="hibernate.c3p0.max_size">20</property>   
+        <property name="hibernate.c3p0.max_statements">0</property>   
+        <property name="hibernate.c3p0.idle_test_period">100</property>   
+        <property name="hibernate.c3p0.timeout">50</property>  
+           
+        <!-- Mapping Classes-->
+        
+         <mapping class="br.com.model.Pessoa"/>
+    </session-factory>
 </hibernate-configuration>
